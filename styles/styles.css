@@ -1,0 +1,157 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL Y TIPOGRAFÍA (Google Fonts)
+   ========================================== */
+.body-site {
+    background-color: #0f172a; /* Fondo oscuro primario (Slate) */
+    color: #f1f5f9;            /* Texto gris muy claro para alto contraste */
+    font-family: 'Roboto', sans-serif; /* Tipografía base con fallback genérico */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   CABECERA Y NAVEGACIÓN (Header)
+   ========================================== */
+.header-site {
+    background-color: #1e293b; /* Fondo secundario más claro */
+    padding: 20px;
+    border-bottom: 3px solid #38bdf8; /* Línea de acento Celeste */
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #38bdf8; /* Color de acento */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Estado activo y efecto hover */
+.nav-link:hover, .nav-link.active {
+    color: #f1f5f9;
+    border-bottom: 2px solid #38bdf8;
+}
+
+/* ==========================================
+   CONTENIDO PRINCIPAL Y JERARQUÍAS (Main)
+   ========================================== */
+.main-content {
+    padding: 30px 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Centra el contenido en pantallas grandes */
+}
+
+.section-card {
+    background-color: #1e293b; /* Tarjetas de contenido */
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+/* Jerarquía de títulos clara y pesada */
+.main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 0;
+}
+
+.sub-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+.text-p {
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+/* Listas estilizadas */
+.skills-list, .contact-details {
+    padding-left: 20px;
+    color: #cbd5e1;
+}
+
+.skills-list li {
+    margin-bottom: 8px;
+}
+
+.contact-link {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   IMÁGENES Y BLOQUES DE SERVICIOS
+   ========================================== */
+.image-container {
+    margin: 20px 0 0 0;
+    padding: 10px;
+    background-color: #0f172a;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.site-image {
+    display: block;
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+}
+
+.image-caption {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.service-box {
+    background-color: #0f172a;
+    padding: 15px;
+    margin-top: 15px;
+    border-left: 4px solid #38bdf8;
+    border-radius: 0 6px 6px 0;
+}
+
+.service-title {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+/* ==========================================
+   PIE DE PÁGINA (Footer)
+   ========================================== */
+.footer-site {
+    background-color: #0f172a;
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 14px;
+    border-top: 1px solid #1e293b;
+}

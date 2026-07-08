@@ -1,51 +1,56 @@
 <!DOCTYPE html>
-<html lang="es"> <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Mí - Nahuel</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body> <header>
-        <strong>SOBRE MÍ</strong>
+<body class="body-site">
+
+    <header class="header-site">
+        <strong class="logo">SOBRE MÍ</strong>
         <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+            <ul class="nav-list">
+                <li><a class="nav-link" href="../index.html">Inicio</a></li>
+                <li><a class="nav-link active" href="sobre-mi.html">Sobre mí</a></li>
+                <li><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+                <li><a class="nav-link" href="servicios.html">Servicios</a></li>
+                <li><a class="nav-link" href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h1>Hola, soy Nahuel</h1>
-            <p>Bienvenidos a mi sitio web personal. Acá vas a conocer más sobre mí y lo que se hacer.</p>
-            
-            <figure>
-                <img src="../images/mi_foto.jpg" alt="Imagen de Nahuel recreada con inteligencia artificial." width="300"> 
-                <figcaption>Retrato personal generado con IA.</figcaption>
+    <main class="main-content">
+        <section class="section-card">
+            <h1 class="main-title">Hola, soy Nahuel</h1>
+            <p class="text-p">Bienvenidos a mi sitio web personal. Acá vas a conocer más sobre mí, mis proyectos y lo que sé hacer.</p>
+            <figure class="image-container">
+                <img class="site-image" src="../images/mi_foto.jpg" alt="Imagen de Nahuel recreada con inteligencia artificial." width="300"> 
+                <figcaption class="image-caption">Retrato personal generado con IA.</figcaption>
             </figure>
         </section>
 
-        <section>
-            <h2>Mi Historia</h2>
-    <p>Tengo 24 años y desde muy chico me fascina el mundo tecnológico. Actualmente me encuentro enfocado al 100% en aprender programación y desarrollo web, buscando superar nuevos desafíos técnicos día a día.</p>
-</section>
-        </section> <section>
-            <h2>Mis Habilidades</h2>
-            <p>Estas son algunas de las tecnologías que manejo actualmente:</p>
-            <ul>
+        <section class="section-card">
+            <h2 class="sub-title">Mi Historia</h2>
+            <p class="text-p">Soy un estudiante de programación, tengo 24 años y desde chico me gusta la tecnología. Busco superar nuevos desafíos técnicos día a día.</p>
+        </section>
+
+        <section class="section-card">
+            <h2 class="sub-title">Mis Habilidades</h2>
+            <ul class="skills-list">
                 <li>Estructuración web con HTML5</li>
                 <li>Control de versiones con Git y GitHub</li>
             </ul>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer-site">
         <p>copy; 2026 Nahuel. Todos los derechos reservados.</p>
-        <ul>
-            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com" target="_blank">GitHub</a></li>
-        </ul>
     </footer>
 
-</body> </html>
+</body>
+</html>
