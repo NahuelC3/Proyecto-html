@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mí - Nahuel</title>
+    <title>Sobre Mí | Nahuel Carbajal</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,10 @@
 <body class="body-site">
 
     <header class="header-site">
-        <strong class="logo">SOBRE MÍ</strong>
+        <div class="logo-container">
+            <img src="../images/logo.png" alt="Logo de Nahuel Carbajal" class="logo-img" width="40">
+            <strong class="logo">Nahuel Carbajal</strong>
+        </div>
         <nav>
             <ul class="nav-list">
                 <li><a class="nav-link" href="../index.html">Inicio</a></li>
@@ -26,30 +29,32 @@
 
     <main class="main-content">
         <section class="section-card">
-            <h1 class="main-title">Hola, soy Nahuel</h1>
-            <p class="text-p">Bienvenidos a mi sitio web personal. Acá vas a conocer más sobre mí, mis proyectos y lo que sé hacer.</p>
+            <article class="about-article">
+                <h1 class="main-title">Quién soy</h1>
+                <p class="text-p">Mi nombre es Nahuel Carbajal, soy de Buenos Aires y actualmente estoy dando mis primeros pasos en el apasionado mundo del desarrollo web. Decidí meterme en la programación porque me fascina la idea de crear soluciones desde cero y transformar líneas de código en experiencias visuales e interactivas útiles para las personas.</p>
+                <p class="text-p">Me considero una persona proactiva, detallista y con una gran capacidad para adaptarme a los cambios y aprender de forma constante.</p>
+            </article>
+
             <figure class="image-container">
-                <img class="site-image" src="../images/mi_foto.jpg" alt="Imagen de Nahuel recreada con inteligencia artificial." width="300"> 
-                <figcaption class="image-caption">Retrato personal generado con IA.</figcaption>
+                <img class="site-image" src="../images/mi_foto.jpg" alt="Imagen representativa de la sección Sobre mí" width="500">
+                <figcaption class="image-caption">Formación y perfil profesional en desarrolloFrontend.</figcaption>
             </figure>
         </section>
 
         <section class="section-card">
-            <h2 class="sub-title">Mi Historia</h2>
-            <p class="text-p">Soy un estudiante de programación, tengo 24 años y desde chico me gusta la tecnología. Busco superar nuevos desafíos técnicos día a día.</p>
-        </section>
-
-        <section class="section-card">
-            <h2 class="sub-title">Mis Habilidades</h2>
-            <ul class="skills-list">
-                <li>Estructuración web con HTML5</li>
-                <li>Control de versiones con Git y GitHub</li>
-            </ul>
+            <article class="education-article">
+                <h2 class="sub-title">Educación y Trayectoria</h2>
+                <p class="text-p">Mi camino de aprendizaje formal incluye:</p>
+                <ul class="skills-list">
+                    <li><strong>Curso de Desarrollo Web Frontend:</strong> Aprendizaje de HTML5, CSS3, maquetación flexible (Flexbox y CSS Grid) y metodologías como Mobile-First.</li>
+                    <li><strong>Autodidacta en Tecnologías Digitales:</strong> Experimentación continua con herramientas de control de versiones e Inteligencia Artificial aplicada a la optimización de código.</li>
+                </ul>
+            </article>
         </section>
     </main>
 
     <footer class="footer-site">
-        <p>&copy; 2026 Nahuel. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Nahuel Carbajal. Todos los derechos reservados.</p>
     </footer>
 
 </body>

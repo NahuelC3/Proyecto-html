@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Proyectos - Nahuel</title>
+    <title>Proyectos | Nahuel Carbajal</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,10 @@
 <body class="body-site">
 
     <header class="header-site">
-        <strong class="logo">MIS PROYECTOS</strong>
+        <div class="logo-container">
+            <img src="../images/logo.png" alt="Logo de Nahuel Carbajal" class="logo-img" width="40">
+            <strong class="logo">Nahuel Carbajal</strong>
+        </div>
         <nav>
             <ul class="nav-list">
                 <li><a class="nav-link" href="../index.html">Inicio</a></li>
@@ -26,17 +29,33 @@
 
     <main class="main-content">
         <section class="section-card">
-            <h1 class="main-title">Trabajos y Proyectos</h1>
-            <p class="text-p">Acá vas a poder ver algunos de los proyectos en los que estuve trabajando.</p>
+            <article class="projects-intro">
+                <h1 class="main-title">Mis Proyectos</h1>
+                <p class="text-p">En esta sección vas a encontrar los trabajos prácticos y proyectos personales que vengo desarrollando a lo largo de mi formación como programador.</p>
+            </article>
+        </section>
+
+        <section class="section-card">
+            <article class="project-box">
+                <h2 class="sub-title">Proyecto : Sitio web de futbol</h2>
+                <p class="text-p">Este mismo sitio web representa mi primer gran hito técnico. Fue desarrollado aplicando una arquitectura limpia de carpetas y siguiendo los estándares más modernos de la industria.</p>
+                <ul class="skills-list">
+                    <li><strong>Tecnologías:</strong> HTML5 Semántico, CSS3 avanzado (Flexbox y CSS Grid).</li>
+                    <li><strong>Enfoque:</strong> Diseño Mobile-First responsivo para celulares, tablets y computadoras.</li>
+                </ul>
+            </article>
+
             <figure class="image-container">
-                <img class="site-image" src="../images/lalupaalbiceleste.png" alt="Icono de una lupa con los colores de la bandera argentina." width="300">
-                <figcaption class="image-caption">Vista previa de mi sitio web en desarrollo.</figcaption>
+                <img class="site-image" src="../images/lalupaalbiceleste.png" alt="Captura de pantalla de mis proyectos web en desarrollo" width="500">
+                <figcaption class="image-caption">Vista previa del entorno de trabajo y estructura.</figcaption>
             </figure>
         </section>
+
+        
     </main>
 
     <footer class="footer-site">
-        <p>&copy; 2026 Nahuel. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Nahuel Carbajal. Todos los derechos reservados.</p>
     </footer>
 
 </body>
