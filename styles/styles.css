@@ -1,13 +1,12 @@
-/* ==========================================
-   1. RESETEO GLOBAL (Criterio de Aceptación)
-   ========================================== */
+/* ==========================================================================
+   1. RESETEO GLOBAL Y VARIABLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Evita que el padding rompa los anchos calculados */
+    box-sizing: border-box;
 }
 
-/* Estilos base del cuerpo */
 .body-site {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f7f6;
@@ -15,33 +14,36 @@
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Asegura que el footer quede abajo si hay poco contenido */
+    min-height: 100vh;
 }
 
-/* ==========================================
-   2. NAVBAR FLEXIBLE (Criterio de Aceptación)
-   ========================================== */
+/* ==========================================================================
+   2. DISEÑO BASE: MOBILE-FIRST (Para celulares, todo al 100% de ancho)
+   ========================================================================== */
+
+/* Header y Navbar en Mobile (Se apilan o se acomodan fluidos) */
 .header-site {
     background-color: #ffffff;
-    padding: 20px 40px; /* Padding para que respire */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    
-    /* Activamos Flexbox en el padre */
-    display: flex; 
-    justify-content: space-between; /* Logo a un extremo, enlaces al otro */
-    align-items: center;            /* Alineación vertical perfecta */
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column; /* Apilado en celulares */
+    align-items: center;
+    gap: 15px;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Separa el logo del texto de manera uniforme */
+    gap: 10px;
 }
 
 .nav-list {
     display: flex;
+    flex-wrap: wrap; /* Si no entran los links, bajan */
+    justify-content: center;
     list-style: none;
-    gap: 20px; /* Evita márgenes manuales repetitivos */
+    gap: 15px;
 }
 
 .nav-link {
@@ -49,63 +51,66 @@
     color: #555;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    padding: 5px 10px;
-    transition: color 0.3s;
+    font-size: 0.9rem;
 }
 
 .nav-link.active, .nav-link:hover {
-    color: #007bff; /* Color azul destacado para la página activa */
+    color: #007bff;
 }
 
-/* ==========================================
-   3. LAYOUT GENERAL Y SECCIONES (Flexbox + Gap)
-   ========================================== */
+/* Contenido Principal en Mobile */
 .main-content {
-    flex: 1; /* Empuja el footer hacia abajo */
+    flex: 1;
+    padding: 20px 15px;
     display: flex;
     flex-direction: column;
-    gap: 30px;        /* Espaciado uniforme entre las secciones grandes */
-    padding: 40px 20px; /* Aire general del sitio */
-    max-width: 900px;
-    margin: 0 auto;   /* Centra todo el contenido en pantallas grandes */
+    gap: 25px; /* Espaciado con gap */
     width: 100%;
 }
 
-/* Box Model en contenedores pequeños y tarjetas */
+/* Tarjetas/Contenedores pequeños en Mobile */
 .section-card {
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    
-    /* REQUISITO: Padding mínimo de 20px */
-    padding: 30px; 
-    
-    /* Flexbox interno para organizar títulos, textos e imágenes */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    padding: 20px; /* Padding mínimo de 20px */
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaciado uniforme para que nada quede apretado */
+    gap: 15px;
 }
 
-/* Modificación específica para la página de Servicios */
-/* Organiza las tarjetas de servicios una al lado de la otra */
+/* REQUISITO GRID MAESTRO EN MOBILE: 
+   En celular, las áreas se apilan una abajo de la otra en 1 sola columna */
+.grid-maestro-servicios {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna flexible */
+    grid-template-areas: 
+        "titulo"
+        "tarjetas"
+        "imagen";
+    gap: 20px;
+}
+
+/* Asignamos las áreas semánticas */
+.area-titulo { grid-area: titulo; }
+.area-tarjetas { grid-area: tarjetas; }
+.area-imagen { grid-area: imagen; }
+
+/* Contenedor de las tarjetas de servicios en Mobile */
 .services-container {
     display: flex;
-    flex-direction: row; /* En fila */
-    gap: 20px;           /* Separación entre tarjetas */
-    flex-wrap: wrap;     /* Si no entran, bajan automáticamente */
-    margin-top: 10px;
+    flex-direction: column; /* Una abajo de la otra */
+    gap: 15px;
 }
 
 .service-box {
     background-color: #f8f9fa;
     border-left: 4px solid #007bff;
-    padding: 20px; /* Padding mínimo requerido */
-    flex: 1;
-    min-width: 250px;
+    padding: 20px;
     border-radius: 4px;
 }
 
-/* Elementos de imagen */
+/* Imágenes e ilustraciones */
 .image-container {
     display: flex;
     flex-direction: column;
@@ -120,26 +125,73 @@
 }
 
 .image-caption {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #666;
     font-style: italic;
 }
 
-/* Lista de habilidades */
-.skills-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-left: 20px;
-}
-
-/* ==========================================
-   4. FOOTER
-   ========================================== */
+/* Footer */
 .footer-site {
     background-color: #222;
     color: #fff;
     text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
+    padding: 15px;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+
+/* ==========================================================================
+   3. BREAKPOINT: TABLET (min-width: 768px) - Opcional para suavizar el salto
+   ========================================================================== */
+@media (min-width: 768px) {
+    .header-site {
+        flex-direction: row; /* El menú se pone al lado del logo */
+        justify-content: space-between;
+        padding: 20px 40px;
+    }
+    
+    .main-content {
+        padding: 40px 30px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .services-container {
+        flex-direction: row; /* Tarjetas de servicios una al lado de la otra */
+        flex-wrap: wrap;
+    }
+    
+    .service-box {
+        flex: 1;
+        min-width: 220px;
+    }
+}
+
+
+/* ==========================================================================
+   4. BREAKPOINT CRUCIAL: DESKTOP (min-width: 1024px) - ¡Criterio de Aceptación!
+   ========================================================================== */
+@media (min-width: 1024px) {
+    .main-content {
+        max-width: 1100px; /* Se expande el sitio en pantallas grandes */
+    }
+
+    /* ¡Transformación del Layout con CSS Grid en Escritorio! */
+    .grid-maestro-servicios {
+        grid-template-columns: 2fr 1fr; /* Dos columnas: Izquierda ancha, Derecha angosta */
+        grid-template-areas: 
+            "titulo   titulo"
+            "tarjetas imagen"; /* Las tarjetas a la izquierda, la foto a la derecha */
+        gap: 30px; /* Mayor espacio entre columnas */
+    }
+
+    .services-container {
+        flex-direction: column; /* En desktop, al tener la foto al lado, las tarjetas se apilan lindo */
+        gap: 20px;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+    }
 }
