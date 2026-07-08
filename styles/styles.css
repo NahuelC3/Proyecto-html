@@ -1,157 +1,145 @@
 /* ==========================================
-   CONFIGURACIÓN GENERAL Y TIPOGRAFÍA (Google Fonts)
+   1. RESETEO GLOBAL (Criterio de Aceptación)
    ========================================== */
-.body-site {
-    background-color: #0f172a; /* Fondo oscuro primario (Slate) */
-    color: #f1f5f9;            /* Texto gris muy claro para alto contraste */
-    font-family: 'Roboto', sans-serif; /* Tipografía base con fallback genérico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Evita que el padding rompa los anchos calculados */
+}
+
+/* Estilos base del cuerpo */
+.body-site {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el footer quede abajo si hay poco contenido */
 }
 
 /* ==========================================
-   CABECERA Y NAVEGACIÓN (Header)
+   2. NAVBAR FLEXIBLE (Criterio de Aceptación)
    ========================================== */
 .header-site {
-    background-color: #1e293b; /* Fondo secundario más claro */
-    padding: 20px;
-    border-bottom: 3px solid #38bdf8; /* Línea de acento Celeste */
+    background-color: #ffffff;
+    padding: 20px 40px; /* Padding para que respire */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+    /* Activamos Flexbox en el padre */
+    display: flex; 
+    justify-content: space-between; /* Logo a un extremo, enlaces al otro */
+    align-items: center;            /* Alineación vertical perfecta */
 }
 
-.logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    color: #38bdf8; /* Color de acento */
-    display: block;
-    margin-bottom: 10px;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Separa el logo del texto de manera uniforme */
 }
 
 .nav-list {
+    display: flex;
     list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-list li {
-    display: inline-block;
-    margin-right: 15px;
+    gap: 20px; /* Evita márgenes manuales repetitivos */
 }
 
 .nav-link {
-    color: #94a3b8;
     text-decoration: none;
+    color: #555;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s;
 }
 
-/* Estado activo y efecto hover */
-.nav-link:hover, .nav-link.active {
-    color: #f1f5f9;
-    border-bottom: 2px solid #38bdf8;
+.nav-link.active, .nav-link:hover {
+    color: #007bff; /* Color azul destacado para la página activa */
 }
 
 /* ==========================================
-   CONTENIDO PRINCIPAL Y JERARQUÍAS (Main)
+   3. LAYOUT GENERAL Y SECCIONES (Flexbox + Gap)
    ========================================== */
 .main-content {
-    padding: 30px 20px;
-    max-width: 800px;
-    margin: 0 auto; /* Centra el contenido en pantallas grandes */
+    flex: 1; /* Empuja el footer hacia abajo */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;        /* Espaciado uniforme entre las secciones grandes */
+    padding: 40px 20px; /* Aire general del sitio */
+    max-width: 900px;
+    margin: 0 auto;   /* Centra todo el contenido en pantallas grandes */
+    width: 100%;
 }
 
+/* Box Model en contenedores pequeños y tarjetas */
 .section-card {
-    background-color: #1e293b; /* Tarjetas de contenido */
-    padding: 25px;
-    margin-bottom: 25px;
+    background-color: #ffffff;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    
+    /* REQUISITO: Padding mínimo de 20px */
+    padding: 30px; 
+    
+    /* Flexbox interno para organizar títulos, textos e imágenes */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado uniforme para que nada quede apretado */
 }
 
-/* Jerarquía de títulos clara y pesada */
-.main-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-top: 0;
-}
-
-.sub-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #38bdf8;
-}
-
-.text-p {
-    font-size: 16px;
-    color: #cbd5e1;
-}
-
-/* Listas estilizadas */
-.skills-list, .contact-details {
-    padding-left: 20px;
-    color: #cbd5e1;
-}
-
-.skills-list li {
-    margin-bottom: 8px;
-}
-
-.contact-link {
-    color: #38bdf8;
-    text-decoration: none;
-}
-
-.contact-link:hover {
-    text-decoration: underline;
-}
-
-/* ==========================================
-   IMÁGENES Y BLOQUES DE SERVICIOS
-   ========================================== */
-.image-container {
-    margin: 20px 0 0 0;
-    padding: 10px;
-    background-color: #0f172a;
-    border-radius: 6px;
-    display: inline-block;
-}
-
-.site-image {
-    display: block;
-    border-radius: 4px;
-    max-width: 100%;
-    height: auto;
-}
-
-.image-caption {
-    font-size: 14px;
-    color: #94a3b8;
-    margin-top: 8px;
-    text-align: center;
+/* Modificación específica para la página de Servicios */
+/* Organiza las tarjetas de servicios una al lado de la otra */
+.services-container {
+    display: flex;
+    flex-direction: row; /* En fila */
+    gap: 20px;           /* Separación entre tarjetas */
+    flex-wrap: wrap;     /* Si no entran, bajan automáticamente */
+    margin-top: 10px;
 }
 
 .service-box {
-    background-color: #0f172a;
-    padding: 15px;
-    margin-top: 15px;
-    border-left: 4px solid #38bdf8;
-    border-radius: 0 6px 6px 0;
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+    padding: 20px; /* Padding mínimo requerido */
+    flex: 1;
+    min-width: 250px;
+    border-radius: 4px;
 }
 
-.service-title {
-    margin-top: 0;
-    color: #ffffff;
+/* Elementos de imagen */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.image-caption {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Lista de habilidades */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 20px;
 }
 
 /* ==========================================
-   PIE DE PÁGINA (Footer)
+   4. FOOTER
    ========================================== */
 .footer-site {
-    background-color: #0f172a;
+    background-color: #222;
+    color: #fff;
     text-align: center;
     padding: 20px;
-    color: #64748b;
-    font-size: 14px;
-    border-top: 1px solid #1e293b;
+    font-size: 0.9rem;
 }
