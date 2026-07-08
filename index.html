@@ -4,50 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Sitio Web | Nahuel Carbajal</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body-site">
 
-    <header>
-        <strong>Nahuel Carbajal</strong>
+    <header class="header-site">
+        <strong class="logo">Nahuel Carbajal</strong>
         <nav>
-            <ul>
-                <li><a href="pages/sobre-mi.html">Sobre mí</a></li>
-                <li><a href="pages/proyectos.html">Proyectos</a></li>
-                <li><a href="pages/contacto.html">Contacto</a></li>
+            <ul class="nav-list">
+                <li><a class="nav-link active" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="pages/sobre-mi.html">Sobre mí</a></li>
+                <li><a class="nav-link" href="pages/proyectos.html">Proyectos</a></li>
+                <li><a class="nav-link" href="pages/servicios.html">Servicios</a></li>
+                <li><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        
-        <section>
-            <h1>Mi primer sitio web</h1>
-            <p>Bienvenidos a la página de inicio de mi rincón digital. Acá vas a encontrar el acceso a toda mi información profesional.</p>
+    <main class="main-content">
+        <section class="section-card">
+            <h1 class="main-title">Mi primer sitio web</h1>
+            <p class="text-p">Bienvenidos a la página de inicio de mi rincón digital. Acá vas a encontrar el acceso a toda mi información profesional.</p>
         </section>
 
-        <section>
-            <h2>Un poco sobre mí</h2>
-    <p>Soy Nahuel, un apasionado por la tecnología en constante formación. Te invito a recorrer mi sitio para conocer mi perfil completo, mis habilidades técnicas y los proyectos que vengo desarrollando.</p>
-            <figure>
-                <img src="images/mi_foto.jpg" alt="Imagen de Nahuel recreada con inteligencia artificial." width="300">
-                <figcaption>Imagen de presentación para el portafolio.</figcaption>
+        <section class="section-card">
+            <h2 class="sub-title">Un poco sobre mí</h2>
+            <p class="text-p">Soy Nahuel, un apasionado por la tecnología en constante formación. Te invito a recorrer mi sitio para conocer mi perfil completo, mis habilidades técnicas y los proyectos que vengo desarrollando.</p>
+            <figure class="image-container">
+                <img class="site-image" src="images/mi_foto.jpg" alt="Imagen de Nahuel recreada con inteligencia artificial." width="300">
+                <figcaption class="image-caption">Mi avatar de presentación para el portafolio.</figcaption>
             </figure>
         </section>
 
-        <section>
-            <h2>Servicios y Habilidades</h2>
-            <p>Actualmente me estoy capacitando en las siguientes áreas de la tecnología:</p>
-            <ul>
+        <section class="section-card">
+            <h2 class="sub-title">Habilidades Destacadas</h2>
+            <p class="text-p">Actualmente me estoy capacitando en las siguientes áreas de la tecnología:</p>
+            <ul class="skills-list">
                 <li>Estructuración de documentos con HTML5 Semántico.</li>
                 <li>Gestión de repositorios públicos en GitHub.</li>
-                <li>Uso básico de herramientas de Inteligencia Artificial para diseño.</li>
+                <li>Uso de herramientas de Inteligencia Artificial para diseño.</li>
             </ul>
         </section>
-
     </main>
 
-    <footer>
-        <p>copy; 2026 Nahuel Carbajal. Todos los derechos reservados.</p>
+    <footer class="footer-site">
+        <p>&copy; 2026 Nahuel Carbajal. Todos los derechos reservados.</p>
     </footer>
 
 </body>
