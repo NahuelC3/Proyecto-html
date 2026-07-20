@@ -18,49 +18,52 @@
 }
 
 /* ==========================================================================
-   2. DISEÑO BASE: MOBILE-FIRST (Para celulares, todo apilado)
+   2. PERSONALIZACIÓN DE BOOTSTRAP (Mantiene la identidad del sitio)
    ========================================================================== */
 
-/* Header y Navbar en Mobile */
-.header-site {
-    background-color: #ffffff;
-    padding: 15px 20px;
+/* Navbar de Bootstrap adaptado a tu paleta */
+.navbar {
+    background-color: #ffffff !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    padding: 15px 20px;
 }
 
-.logo-container {
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #333 !important;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.nav-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    gap: 15px;
-}
-
 .nav-link {
-    text-decoration: none;
-    color: #555;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 0.9rem;
-    padding: 5px 10px;
+    font-size: 0.95rem;
+    color: #555 !important;
     transition: color 0.3s;
 }
 
 .nav-link.active, .nav-link:hover {
-    color: #007bff;
+    color: #007bff !important;
 }
 
-/* Contenido Principal en Mobile */
+/* Ajustes del Carousel de Bootstrap */
+.carousel {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.carousel-img {
+    height: 350px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   3. CONTENIDO PRINCIPAL Y TARJETAS
+   ========================================================================== */
 .main-content {
     flex: 1;
     padding: 20px 15px;
@@ -70,59 +73,32 @@
     width: 100%;
 }
 
-/* Tarjetas/Contenedores generales con Padding mínimo de 20px */
 .section-card {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     padding: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
 }
 
-/* GRIDS MAESTROS EN MOBILE: 1 Sola Columna Flexible */
-.grid-maestro-servicios, .grid-sobre-mi {
+/* Grids personalizados */
+.grid-sobre-mi {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
 
-/* Áreas de Servicios */
-.grid-maestro-servicios {
-    grid-template-areas: 
-        "titulo"
-        "tarjetas"
-        "imagen";
-}
-.area-titulo { grid-area: titulo; }
-.area-tarjetas { grid-area: tarjetas; }
-.area-imagen { grid-area: imagen; }
-
-/* Áreas de Sobre Mí */
-.grid-sobre-mi {
-    grid-template-areas: 
-        "texto-sobre"
-        "foto-sobre";
-}
 .area-texto-sobre { grid-area: texto-sobre; }
 .area-foto-sobre { grid-area: foto-sobre; }
-
-/* Contenedor Flex de Tarjetas Internas */
-.services-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
 
 .service-box {
     background-color: #f8f9fa;
     border-left: 4px solid #007bff;
     padding: 20px;
     border-radius: 4px;
+    height: 100%;
 }
 
-/* Elementos Multimedia e Ilustrativos */
+/* Imagen y pie */
 .image-container {
     display: flex;
     flex-direction: column;
@@ -143,48 +119,6 @@
     text-align: center;
 }
 
-/* Formulario de Contacto (Mobile) */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.form-group label {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
-.form-group input, .form-group textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.btn-submit {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn-submit:hover {
-    background-color: #0056b3;
-}
-
 /* Footer */
 .footer-site {
     background-color: #222;
@@ -196,63 +130,18 @@
 }
 
 /* ==========================================================================
-   3. BREAKPOINT: TABLET (min-width: 768px)
-   ========================================================================== */
-@media (min-width: 768px) {
-    .header-site {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 20px 40px;
-    }
-    
-    .main-content {
-        padding: 40px 30px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .services-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    .service-box {
-        flex: 1;
-        min-width: 220px;
-    }
-}
-
-/* ==========================================================================
-   4. BREAKPOINT: DESKTOP (min-width: 1024px) - TRANSFORMACIÓN A GRID MULTICOLUMNA
+   4. BREAKPOINTS Y DESKTOP
    ========================================================================== */
 @media (min-width: 1024px) {
     .main-content {
         max-width: 1100px;
+        margin: 0 auto;
     }
 
-    /* Grid de Servicios en Computadora */
-    .grid-maestro-servicios {
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: 
-            "titulo   titulo"
-            "tarjetas imagen";
-        gap: 30px;
-    }
-
-    .services-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    /* Grid de Sobre Mí (Desafío del Profe en Inicio) */
     .grid-sobre-mi {
         grid-template-columns: 2fr 1fr;
         grid-template-areas: "texto-sobre foto-sobre";
         align-items: center;
         gap: 40px;
-    }
-    
-    .nav-link {
-        font-size: 1rem;
     }
 }
