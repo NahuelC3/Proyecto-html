@@ -1,0 +1,26 @@
+// ==========================================================================
+//  main.scss — ÚNICO PUNTO DE ENTRADA
+//  Se compila a un solo archivo CSS. Orden de carga:
+//  utilities -> base -> layout -> components.
+// ==========================================================================
+
+// 1) Utilities: no emiten CSS, sólo definen variables y mixins que el
+//    resto de los partials necesita.
+@use 'utilities/variables';
+@use 'utilities/mixins';
+
+// 2) Base: reseteo y estilos de elementos.
+@use 'base/base';
+@use 'base/tipografia';
+
+// 3) Layout: estructura de la página.
+@use 'layout/header';
+@use 'layout/nav';
+@use 'layout/main';
+@use 'layout/footer';
+
+// 4) Components: piezas reutilizables.
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/carousel';
+@use 'components/media';

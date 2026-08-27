@@ -1,0 +1,50 @@
+// ==========================================================================
+//  MIXINS
+//  Patrones que se repiten en más de un partial.
+// ==========================================================================
+
+@use 'variables' as *;
+
+// --------------------------------------------------------------------------
+//  desktop
+//  Envuelve el único media query del proyecto para no repetir el número
+//  ni el "min-width". Permite dejar el override desktop anidado junto a
+//  su selector.
+// --------------------------------------------------------------------------
+@mixin desktop {
+    @media (min-width: $bp-desktop) {
+        @content;
+    }
+}
+
+// --------------------------------------------------------------------------
+//  flex-columna
+//  display:flex + flex-direction:column con alineación configurable.
+//  Usado en .body-site, .main-content (align por defecto) y
+//  .image-container (align center).
+//  align-items: stretch es el valor inicial de CSS -> no cambia nada
+//  visualmente cuando no se pasa argumento.
+// --------------------------------------------------------------------------
+@mixin flex-columna($align: stretch) {
+    display: flex;
+    flex-direction: column;
+    align-items: $align;
+}
+
+// --------------------------------------------------------------------------
+//  tarjeta
+//  Superficie con fondo, radio, sombra y padding. Parametrizada para
+//  cubrir tanto .section-card (todos los valores por defecto) como
+//  .service-box (variante: otra superficie, radio chico, sin sombra).
+// --------------------------------------------------------------------------
+@mixin tarjeta(
+    $fondo: $color-superficie,
+    $radio-borde: $radio,
+    $sombra: $sombra-suave,
+    $espaciado: $esp-lg
+) {
+    background-color: $fondo;
+    border-radius: $radio-borde;
+    box-shadow: $sombra;
+    padding: $espaciado;
+}

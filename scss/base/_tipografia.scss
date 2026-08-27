@@ -1,0 +1,14 @@
+// ==========================================================================
+//  TIPOGRAFÍA BASE
+//  Tipografía del documento. Se mantiene deliberadamente acotada: el CSS
+//  original no define reglas propias para h1..h6 ni p (esos elementos
+//  heredan del cuerpo o los estiliza Bootstrap), así que agregarlas
+//  cambiaría el aspecto real del sitio.
+// ==========================================================================
+
+@use '../utilities/variables' as *;
+
+.body-site {
+    font-family: $fuente-base;
+    line-height: $interlineado;
+}

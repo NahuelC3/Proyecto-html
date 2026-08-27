@@ -1,0 +1,13 @@
+{
+  "name": "miprimerpagina",
+  "version": "1.0.0",
+  "description": "Portafolio personal de Nahuel Carbajal - estilos con arquitectura SCSS",
+  "private": true,
+  "scripts": {
+    "build": "sass scss/main.scss styles/styles.css --no-source-map --style=expanded",
+    "watch": "sass --watch scss/main.scss:styles/styles.css --no-source-map --style=expanded"
+  },
+  "devDependencies": {
+    "sass": "^1.103.1"
+  }
+}

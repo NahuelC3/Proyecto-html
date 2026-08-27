@@ -1,148 +1,137 @@
-/* ==========================================================================
-   1. RESETEO GLOBAL Y VARIABLES
-   ========================================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .body-site {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  color: #333;
 }
 
-/* ==========================================================================
-   2. PERSONALIZACIÓN DE BOOTSTRAP (Mantiene la identidad del sitio)
-   ========================================================================== */
+.body-site {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
 
-/* Navbar de Bootstrap adaptado a tu paleta */
 .navbar {
-    background-color: #ffffff !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    padding: 15px 20px;
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 15px 20px;
 }
-
 .navbar-brand {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #333 !important;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #333 !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .nav-link {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: #555 !important;
-    transition: color 0.3s;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #555 !important;
+  transition: color 0.3s;
 }
-
 .nav-link.active, .nav-link:hover {
-    color: #007bff !important;
+  color: #007bff !important;
 }
 
-/* Ajustes del Carousel de Bootstrap */
-.carousel {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.carousel-img {
-    height: 350px;
-    object-fit: cover;
-}
-
-/* ==========================================================================
-   3. CONTENIDO PRINCIPAL Y TARJETAS
-   ========================================================================== */
 .main-content {
-    flex: 1;
-    padding: 20px 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  gap: 25px;
+  width: 100%;
+  padding: 20px 15px;
+}
+@media (min-width: 1024px) {
+  .main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+
+.grid-sobre-mi {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 1024px) {
+  .grid-sobre-mi {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "texto-sobre foto-sobre";
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+.area-texto-sobre {
+  grid-area: texto-sobre;
+}
+
+.area-foto-sobre {
+  grid-area: foto-sobre;
+}
+
+.footer-site {
+  background-color: #222;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.85rem;
+  margin-top: auto;
 }
 
 .section-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    padding: 25px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  padding: 25px;
 }
-
-/* Grids personalizados */
-.grid-sobre-mi {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.area-texto-sobre { grid-area: texto-sobre; }
-.area-foto-sobre { grid-area: foto-sobre; }
 
 .service-box {
-    background-color: #f8f9fa;
-    border-left: 4px solid #007bff;
-    padding: 20px;
-    border-radius: 4px;
-    height: 100%;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 20px;
+  border-left: 4px solid #007bff;
+  height: 100%;
 }
 
-/* Imagen y pie */
+.carousel {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.carousel-img {
+  height: 350px;
+  object-fit: cover;
+}
+
 .image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .site-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
 }
 
 .image-caption {
-    font-size: 0.85rem;
-    color: #666;
-    font-style: italic;
-    text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
 }
-
-/* Footer */
-.footer-site {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.85rem;
-    margin-top: auto;
-}
-
-/* ==========================================================================
-   4. BREAKPOINTS Y DESKTOP
-   ========================================================================== */
-@media (min-width: 1024px) {
-    .main-content {
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    .grid-sobre-mi {
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: "texto-sobre foto-sobre";
-        align-items: center;
-        gap: 40px;
-    }
-}
-/* Modulo 5 */

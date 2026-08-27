@@ -1,0 +1,37 @@
+// ==========================================================================
+//  MAIN / ESTRUCTURA DE CONTENIDO
+//  Contenedor central de las páginas y las grillas de maquetación.
+//  Los ajustes de desktop quedan anidados junto a cada selector.
+// ==========================================================================
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.main-content {
+    @include flex-columna;
+    flex: 1;
+    gap: $esp-lg;
+    width: 100%;
+    padding: $esp-md $esp-sm;
+
+    @include desktop {
+        max-width: $ancho-maximo;
+        margin: 0 auto;
+    }
+}
+
+.grid-sobre-mi {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $esp-md;
+
+    @include desktop {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "texto-sobre foto-sobre";
+        align-items: center;
+        gap: $esp-xl;
+    }
+}
+
+.area-texto-sobre { grid-area: texto-sobre; }
+.area-foto-sobre  { grid-area: foto-sobre; }

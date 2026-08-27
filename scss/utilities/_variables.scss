@@ -1,0 +1,63 @@
+// ==========================================================================
+//  VARIABLES / TOKENS DE DISEÑO
+//  Único lugar donde viven los valores "crudos". El resto de los partials
+//  (layout/ y components/) sólo referencian estas variables: cero literales.
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+//  Colores
+// --------------------------------------------------------------------------
+$color-fondo:            #f4f7f6;  // fondo general de la página (.body-site)
+$color-texto:            #333;     // texto principal (.body-site, .navbar-brand)
+$color-superficie:       #ffffff;  // superficies "blancas": navbar, tarjetas, texto del footer
+$color-superficie-alt:   #f8f9fa;  // segunda superficie, gris muy claro (.service-box)
+$color-primario:         #007bff;  // azul de acento: links activos/hover y borde de .service-box
+$color-texto-suave:      #555;     // texto secundario (.nav-link en reposo)
+$color-texto-tenue:      #666;     // texto terciario (.image-caption)
+$color-oscuro:           #222;     // fondo del footer
+
+// --------------------------------------------------------------------------
+//  Sombras (valor completo de box-shadow: el token es la sombra entera)
+// --------------------------------------------------------------------------
+$sombra-navbar:   0 2px 5px rgba(0, 0, 0, 0.05);
+$sombra-elevada:  0 4px 6px rgba(0, 0, 0, 0.05);
+$sombra-suave:    0 4px 6px rgba(0, 0, 0, 0.02);
+
+// --------------------------------------------------------------------------
+//  Radios de borde
+// --------------------------------------------------------------------------
+$radio:        8px;  // contenedores grandes: .carousel, .section-card
+$radio-chico:  4px;  // elementos internos: .service-box, .site-image
+
+// --------------------------------------------------------------------------
+//  Escala de espaciado (padding / gap / margin)
+// --------------------------------------------------------------------------
+$esp-xs:  10px;
+$esp-sm:  15px;
+$esp-md:  20px;
+$esp-lg:  25px;
+$esp-xl:  40px;
+
+// --------------------------------------------------------------------------
+//  Tipografía
+// --------------------------------------------------------------------------
+$fuente-base:      'Roboto', sans-serif;       // cuerpo de texto
+$fuente-titulos:   'Montserrat', sans-serif;   // marca y navegación
+
+$peso-regular:  400;
+$peso-medio:    500;
+$peso-bold:     700;
+
+$tam-texto-nav:    0.95rem;  // .nav-link
+$tam-texto-chico:  0.85rem;  // .image-caption, .footer-site
+
+$interlineado:  1.6;
+
+// --------------------------------------------------------------------------
+//  Layout / breakpoints / varios
+// --------------------------------------------------------------------------
+$ancho-maximo:    1100px;  // max-width del contenido en desktop
+$bp-desktop:      1024px;  // único breakpoint del proyecto
+$alto-carousel:   350px;   // altura fija de .carousel-img
+$transicion:      0.3s;    // duración de transiciones (hover de .nav-link)
+$borde-acento:    4px;     // ancho del border-left de .service-box

@@ -1,0 +1,22 @@
+// ==========================================================================
+//  TARJETAS
+//  Tarjeta genérica de sección y su variante para bloques de servicio.
+// ==========================================================================
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.section-card {
+    @include tarjeta;
+}
+
+.service-box {
+    @include tarjeta(
+        $fondo: $color-superficie-alt,
+        $radio-borde: $radio-chico,
+        $sombra: none,
+        $espaciado: $esp-md
+    );
+    border-left: $borde-acento solid $color-primario;
+    height: 100%;
+}

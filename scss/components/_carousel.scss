@@ -1,0 +1,17 @@
+// ==========================================================================
+//  CAROUSEL
+//  Ajustes del carousel de Bootstrap usado en la página de inicio.
+// ==========================================================================
+
+@use '../utilities/variables' as *;
+
+.carousel {
+    border-radius: $radio;
+    overflow: hidden;
+    box-shadow: $sombra-elevada;
+
+    &-img {
+        height: $alto-carousel;
+        object-fit: cover;
+    }
+}

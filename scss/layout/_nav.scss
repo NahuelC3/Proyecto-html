@@ -1,0 +1,19 @@
+// ==========================================================================
+//  NAVEGACIÓN
+//  Enlaces del menú principal y sus estados.
+// ==========================================================================
+
+@use '../utilities/variables' as *;
+
+.nav-link {
+    font-family: $fuente-titulos;
+    font-weight: $peso-medio;
+    font-size: $tam-texto-nav;
+    color: $color-texto-suave !important;
+    transition: color $transicion;
+
+    &.active,
+    &:hover {
+        color: $color-primario !important;
+    }
+}

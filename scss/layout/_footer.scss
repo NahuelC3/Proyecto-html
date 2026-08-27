@@ -1,0 +1,14 @@
+// ==========================================================================
+//  FOOTER
+// ==========================================================================
+
+@use '../utilities/variables' as *;
+
+.footer-site {
+    background-color: $color-oscuro;
+    color: $color-superficie;
+    text-align: center;
+    padding: $esp-sm;
+    font-size: $tam-texto-chico;
+    margin-top: auto;
+}

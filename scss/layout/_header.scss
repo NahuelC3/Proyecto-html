@@ -1,0 +1,21 @@
+// ==========================================================================
+//  HEADER
+//  Navbar de Bootstrap adaptada a la paleta del sitio.
+// ==========================================================================
+
+@use '../utilities/variables' as *;
+
+.navbar {
+    background-color: $color-superficie !important;
+    box-shadow: $sombra-navbar;
+    padding: $esp-sm $esp-md;
+
+    &-brand {
+        font-family: $fuente-titulos;
+        font-weight: $peso-bold;
+        color: $color-texto !important;
+        display: flex;
+        align-items: center;
+        gap: $esp-xs;
+    }
+}

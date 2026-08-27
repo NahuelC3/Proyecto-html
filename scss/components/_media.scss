@@ -1,0 +1,26 @@
+// ==========================================================================
+//  MEDIA
+//  Figura de imagen + epígrafe. Se repite en index, sobre-mí, proyectos
+//  y servicios.
+// ==========================================================================
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.image-container {
+    @include flex-columna($align: center);
+    gap: $esp-xs;
+}
+
+.site-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: $radio-chico;
+}
+
+.image-caption {
+    font-size: $tam-texto-chico;
+    color: $color-texto-tenue;
+    font-style: italic;
+    text-align: center;
+}
