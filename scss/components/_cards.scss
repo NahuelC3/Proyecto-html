@@ -1,16 +1,39 @@
 // ==========================================================================
 //  TARJETAS
-//  Tarjeta genérica de sección y su variante para bloques de servicio.
+//  Tarjeta genérica de sección (.section-card) y las dos variantes de panel
+//  interno (.service-box, .project-box).
+//
+//  @extend vs @include:
+//  - %tarjeta-base   -> lo que las tres comparten de forma IDÉNTICA
+//                       (posición, wrapping de texto y la transición del hover).
+//  - @include tarjeta -> lo que VARÍA entre ellas (fondo, radio, sombra,
+//                        padding), resuelto con parámetros.
+//
+//  El placeholder vive acá (y no en utilities/) para que el @extend quede en
+//  el mismo archivo que sus tres consumidores y el bloque agrupado se emita
+//  junto al resto de los estilos de tarjeta.
 // ==========================================================================
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins' as *;
 
+%tarjeta-base {
+    position: relative;
+    overflow-wrap: break-word;
+    @include transicion((transform, box-shadow));
+}
+
 .section-card {
-    @include tarjeta;
+    @extend %tarjeta-base;
+    @include tarjeta($espaciado: $esp-md);
+
+    @include desktop {
+        padding: $esp-lg;
+    }
 }
 
 .service-box {
+    @extend %tarjeta-base;
     @include tarjeta(
         $fondo: $color-superficie-alt,
         $radio-borde: $radio-chico,
@@ -19,4 +42,24 @@
     );
     border-left: $borde-acento solid $color-primario;
     height: 100%;
+}
+
+.project-box {
+    @extend %tarjeta-base;
+    @include tarjeta(
+        $fondo: $color-superficie-alt,
+        $radio-borde: $radio-chico,
+        $sombra: none,
+        $espaciado: $esp-md
+    );
+}
+
+// Wrappers de contenido dentro de .section-card: clases que el markup ya
+// usaba sin regla. Sólo normalizan el espaciado entre bloques hermanos.
+.about-article,
+.education-article,
+.projects-intro {
+    &:not(:last-child) {
+        margin-bottom: $esp-md;
+    }
 }

@@ -1,9 +1,9 @@
 // ==========================================================================
 //  TIPOGRAFÍA BASE
-//  Tipografía del documento. Se mantiene deliberadamente acotada: el CSS
-//  original no define reglas propias para h1..h6 ni p (esos elementos
-//  heredan del cuerpo o los estiliza Bootstrap), así que agregarlas
-//  cambiaría el aspecto real del sitio.
+//  Tipografía del documento y de las clases de título/texto que el markup
+//  ya usaba (.main-title, .sub-title, .text-p, .skills-list) pero que hasta
+//  ahora no tenían ninguna regla. Se apoyan en los tokens de tipografía y
+//  color de utilities/_variables.scss.
 // ==========================================================================
 
 @use '../utilities/variables' as *;
@@ -11,4 +11,34 @@
 .body-site {
     font-family: $fuente-base;
     line-height: $interlineado;
+}
+
+.main-title {
+    font-family: $fuente-titulos;
+    font-weight: $peso-bold;
+    color: $color-texto;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+}
+
+.sub-title {
+    font-family: $fuente-titulos;
+    font-weight: $peso-medio;
+    color: $color-primario;
+    overflow-wrap: break-word;
+}
+
+.text-p {
+    font-family: $fuente-base;
+    color: $color-texto;
+    max-width: 70ch;
+}
+
+.skills-list {
+    padding-left: $esp-md;
+    line-height: $interlineado;
+
+    li {
+        margin-bottom: $esp-xs;
+    }
 }

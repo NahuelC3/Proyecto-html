@@ -4,11 +4,14 @@
 // ==========================================================================
 
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 .navbar {
     background-color: $color-superficie !important;
     box-shadow: $sombra-navbar;
-    padding: $esp-sm $esp-md;
+    // El padding horizontal lo aporta .max-width-container para que el
+    // contenido del navbar quede alineado con el de .main-content.
+    padding: $esp-sm 0;
 
     &-brand {
         font-family: $fuente-titulos;
@@ -17,5 +20,19 @@
         display: flex;
         align-items: center;
         gap: $esp-xs;
+        @include transicion(opacity, $dur: $transicion-rapida);
+    }
+}
+
+// El <nav> ocupa todo el ancho (fondo + sombra); su contenido interno se
+// alinea con .main-content: mismo padding lateral en mobile y, en desktop,
+// mismo max-width centrado.
+.max-width-container {
+    width: 100%;
+    padding-inline: $esp-sm;
+
+    @include desktop {
+        max-width: $ancho-maximo;
+        margin-inline: auto;
     }
 }

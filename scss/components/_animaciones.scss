@@ -1,0 +1,97 @@
+// ==========================================================================
+//  ANIMACIONES
+//  Animaciones locales del sitio, sin librerías:
+//   - Entrada al cargar con @keyframes (navbar).
+//   - Micro-interacciones de hover con transition (tarjetas, botón, imagen).
+//  Las animaciones al hacer scroll las resuelve AOS desde el HTML; este
+//  partial cubre lo demás. Todo es deliberadamente sutil.
+// ==========================================================================
+
+@use '../utilities/variables' as *;
+
+// --------------------------------------------------------------------------
+//  Keyframes
+// --------------------------------------------------------------------------
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes bajar-navbar {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+// Clase utilitaria opcional para un fade-in de entrada puntual.
+.anim-aparecer {
+    animation: aparecer 0.5s ease-out both;
+}
+
+// --------------------------------------------------------------------------
+//  Entrada del navbar al cargar (AOS no toca el navbar)
+// --------------------------------------------------------------------------
+.navbar {
+    animation: bajar-navbar 0.4s ease-out both;
+}
+
+// --------------------------------------------------------------------------
+//  Micro-interacciones de hover
+//  La transition ya la aporta cada componente (%tarjeta-base, .btn,
+//  .site-image); acá sólo se define el estado final del hover.
+// --------------------------------------------------------------------------
+.section-card,
+.service-box,
+.project-box {
+    &:hover {
+        transform: translateY($elevacion-hover);
+        box-shadow: $sombra-elevada;
+    }
+}
+
+.btn {
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $sombra-elevada;
+    }
+}
+
+.site-image {
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+.navbar-brand {
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+// --------------------------------------------------------------------------
+//  Respeto por prefers-reduced-motion: se anula todo el movimiento.
+// --------------------------------------------------------------------------
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

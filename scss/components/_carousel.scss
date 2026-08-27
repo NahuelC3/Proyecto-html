@@ -4,6 +4,7 @@
 // ==========================================================================
 
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 .carousel {
     border-radius: $radio;
@@ -11,7 +12,11 @@
     box-shadow: $sombra-elevada;
 
     &-img {
-        height: $alto-carousel;
+        height: $alto-carousel-movil;
         object-fit: cover;
+
+        @include desktop {
+            height: $alto-carousel;
+        }
     }
 }

@@ -56,8 +56,11 @@ $interlineado:  1.6;
 // --------------------------------------------------------------------------
 //  Layout / breakpoints / varios
 // --------------------------------------------------------------------------
-$ancho-maximo:    1100px;  // max-width del contenido en desktop
-$bp-desktop:      1024px;  // único breakpoint del proyecto
-$alto-carousel:   350px;   // altura fija de .carousel-img
-$transicion:      0.3s;    // duración de transiciones (hover de .nav-link)
-$borde-acento:    4px;     // ancho del border-left de .service-box
+$ancho-maximo:        1100px;  // max-width del contenido en desktop (.main-content y .max-width-container)
+$bp-desktop:          1024px;  // único breakpoint del proyecto
+$alto-carousel:       350px;   // altura de .carousel-img en desktop
+$alto-carousel-movil: 220px;   // altura de .carousel-img en mobile
+$transicion:          0.3s;    // duración base de transiciones
+$transicion-rapida:   0.2s;    // transiciones cortas (hover de botones e imágenes)
+$borde-acento:        4px;     // ancho del border-left de .service-box
+$elevacion-hover:     -4px;    // translateY en hover de tarjetas

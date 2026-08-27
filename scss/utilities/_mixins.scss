@@ -48,3 +48,17 @@
     box-shadow: $sombra;
     padding: $espaciado;
 }
+
+// --------------------------------------------------------------------------
+//  transicion
+//  Genera una transición reutilizable. $props acepta una sola propiedad
+//  -> transicion(color)
+//  o una lista entre paréntesis
+//  -> transicion((transform, box-shadow))
+//  La duración por defecto reusa el token $transicion.
+// --------------------------------------------------------------------------
+@mixin transicion($props: all, $dur: $transicion, $easing: ease-in-out) {
+    transition-property: $props;
+    transition-duration: $dur;
+    transition-timing-function: $easing;
+}

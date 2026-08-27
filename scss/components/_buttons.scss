@@ -1,7 +1,13 @@
 // ==========================================================================
 //  BOTONES
-//  El sitio usa exclusivamente los botones de Bootstrap (.btn .btn-primary
-//  en el formulario de contacto) y el CSS original no define ninguna regla
-//  propia de botón. Este partial queda como punto de extensión para cuando
-//  haya estilos de botón personalizados; hoy no emite CSS.
+//  El sitio usa los botones de Bootstrap (.btn .btn-primary en el formulario
+//  de contacto). Acá sólo se agrega la transición base para la micro-
+//  interacción de hover; el estado :hover se define en components/_animaciones.
 // ==========================================================================
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.btn {
+    @include transicion((transform, box-shadow), $dur: $transicion-rapida);
+}

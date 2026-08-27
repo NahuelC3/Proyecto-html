@@ -24,3 +24,7 @@
 @use 'components/cards';
 @use 'components/carousel';
 @use 'components/media';
+
+// 5) Animaciones: keyframes y micro-interacciones. Va al final para poder
+//    superponer los estados :hover sobre los estilos base de cada componente.
+@use 'components/animaciones';

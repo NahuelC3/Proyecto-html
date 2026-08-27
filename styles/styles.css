@@ -18,10 +18,39 @@
   line-height: 1.6;
 }
 
+.main-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+.sub-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #007bff;
+  overflow-wrap: break-word;
+}
+
+.text-p {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  max-width: 70ch;
+}
+
+.skills-list {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+.skills-list li {
+  margin-bottom: 10px;
+}
+
 .navbar {
   background-color: #ffffff !important;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  padding: 15px 20px;
+  padding: 15px 0;
 }
 .navbar-brand {
   font-family: "Montserrat", sans-serif;
@@ -30,6 +59,20 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.max-width-container {
+  width: 100%;
+  padding-inline: 15px;
+}
+@media (min-width: 1024px) {
+  .max-width-container {
+    max-width: 1100px;
+    margin-inline: auto;
+  }
 }
 
 .nav-link {
@@ -37,7 +80,9 @@
   font-weight: 500;
   font-size: 0.95rem;
   color: #555 !important;
-  transition: color 0.3s;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 .nav-link.active, .nav-link:hover {
   color: #007bff !important;
@@ -90,11 +135,30 @@
   margin-top: auto;
 }
 
+.btn {
+  transition-property: transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.project-box, .service-box, .section-card {
+  position: relative;
+  overflow-wrap: break-word;
+  transition-property: transform, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
 .section-card {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-  padding: 25px;
+  padding: 20px;
+}
+@media (min-width: 1024px) {
+  .section-card {
+    padding: 25px;
+  }
 }
 
 .service-box {
@@ -106,14 +170,32 @@
   height: 100%;
 }
 
+.project-box {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 20px;
+}
+
+.about-article:not(:last-child),
+.education-article:not(:last-child),
+.projects-intro:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 .carousel {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 .carousel-img {
-  height: 350px;
+  height: 220px;
   object-fit: cover;
+}
+@media (min-width: 1024px) {
+  .carousel-img {
+    height: 350px;
+  }
 }
 
 .image-container {
@@ -127,6 +209,9 @@
   max-width: 100%;
   height: auto;
   border-radius: 4px;
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 .image-caption {
@@ -134,4 +219,63 @@
   color: #666;
   font-style: italic;
   text-align: center;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes bajar-navbar {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.anim-aparecer {
+  animation: aparecer 0.5s ease-out both;
+}
+
+.navbar {
+  animation: bajar-navbar 0.4s ease-out both;
+}
+
+.section-card:hover,
+.service-box:hover,
+.project-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.site-image:hover {
+  transform: scale(1.03);
+}
+
+.navbar-brand:hover {
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
