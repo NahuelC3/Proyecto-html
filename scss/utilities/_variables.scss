@@ -31,12 +31,16 @@ $radio-chico:  4px;  // elementos internos: .service-box, .site-image
 
 // --------------------------------------------------------------------------
 //  Escala de espaciado (padding / gap / margin)
+//  Cada nivel es un múltiplo entero de $esp-base: la aritmética la resuelve
+//  el preprocesador y el px final es idéntico al que tenían como literal.
 // --------------------------------------------------------------------------
-$esp-xs:  10px;
-$esp-sm:  15px;
-$esp-md:  20px;
-$esp-lg:  25px;
-$esp-xl:  40px;
+$esp-base:  5px;
+
+$esp-xs:  $esp-base * 2;  // 10px
+$esp-sm:  $esp-base * 3;  // 15px
+$esp-md:  $esp-base * 4;  // 20px
+$esp-lg:  $esp-base * 5;  // 25px
+$esp-xl:  $esp-base * 8;  // 40px (único salto no consecutivo: 5 * 8)
 
 // --------------------------------------------------------------------------
 //  Tipografía
@@ -58,6 +62,8 @@ $interlineado:  1.6;
 // --------------------------------------------------------------------------
 $ancho-maximo:        1100px;  // max-width del contenido en desktop (.main-content y .max-width-container)
 $bp-desktop:          1024px;  // único breakpoint del proyecto
+$alto-navbar:         75px;    // alto aprox. del navbar: logo 35px + 2*5px (padding brand) + 2*15px (padding navbar)
+$alto-footer:         52px;    // alto aprox. del footer: línea 0.85rem*1.6 (~22px) + 2*15px ($esp-sm) de padding
 $alto-carousel:       350px;   // altura de .carousel-img en desktop
 $alto-carousel-movil: 220px;   // altura de .carousel-img en mobile
 $transicion:          0.3s;    // duración base de transiciones
