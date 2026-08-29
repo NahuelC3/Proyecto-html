@@ -11,7 +11,7 @@ $color-fondo:            #f4f7f6;  // fondo general de la página (.body-site)
 $color-texto:            #333;     // texto principal (.body-site, .navbar-brand)
 $color-superficie:       #ffffff;  // superficies "blancas": navbar, tarjetas, texto del footer
 $color-superficie-alt:   #f8f9fa;  // segunda superficie, gris muy claro (.service-box)
-$color-primario:         #007bff;  // azul de acento: links activos/hover y borde de .service-box
+$color-primario:         #006fe0;  // azul de acento: links activos/hover y borde de .service-box. Oscurecido desde #007bff para pasar contraste AA (#007bff daba 3.98:1 sobre blanco en .nav-link activo; #006fe0 da 4.83:1)
 $color-texto-suave:      #555;     // texto secundario (.nav-link en reposo)
 $color-texto-tenue:      #666;     // texto terciario (.image-caption)
 $color-oscuro:           #222;     // fondo del footer

@@ -29,7 +29,7 @@
 .sub-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  color: #007bff;
+  color: #006fe0;
   overflow-wrap: break-word;
 }
 
@@ -85,7 +85,7 @@
   transition-timing-function: ease-in-out;
 }
 .nav-link.active, .nav-link:hover {
-  color: #007bff !important;
+  color: #006fe0 !important;
 }
 
 .main-content {
@@ -167,7 +167,7 @@
   border-radius: 4px;
   box-shadow: none;
   padding: 20px;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid #006fe0;
   height: 100%;
 }
 
